@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mysql =require('mysql');
+var cors = require('cors');
 const bookRouter = require('./controllers/books');
 const userRouter = require('./controllers/users');
 require('dotenv/config');
@@ -14,7 +15,7 @@ const bookRoute = bookRouter;
 //Users Route
 const userRoute = userRouter;
 
-
+app.use(cors());
 //Middleware
 //Base MiddleWare
 app.use("/api/v1", router);

@@ -35,7 +35,8 @@ router.post("/user/register", upload.none(), async function (req, res, next) {
 });
 
 router.post("/user/login", upload.none(), async function (req, res, next) {
-  const { email, password } = req.body;
+  var parsedData = JSON.parse(JSON.stringify(req.body));
+  const { email, password } = parsedData;
   sqlpool.query(
     `SELECT * FROM ${db} WHERE email = '${email}'`,
     (err, rows, fields) => {
