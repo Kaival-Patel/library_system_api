@@ -24,7 +24,7 @@ router.post("/user/register", upload.none(), async function (req, res, next) {
           console.error(err);
           res.status(200).json({ e: err.message });
         } else {
-          res.status(200).json({ m: "Registered Successfully", token: token });
+          res.status(200).json({ m: "Registered Successfully", r: token });
         }
       }
     );
