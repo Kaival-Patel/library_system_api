@@ -15,6 +15,10 @@ const bookRoute = bookRouter;
 //Users Route
 const userRoute = userRouter;
 
+//To access image books cover from public
+// app.use(express.static('public'));
+app.use('/public',express.static('public'));
+
 app.use(cors());
 //Middleware
 //Base MiddleWare
